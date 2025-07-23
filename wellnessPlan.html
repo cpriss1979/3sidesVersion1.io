@@ -1,0 +1,331 @@
+<!-- This is the everyday wellness page that has the wellness form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Everyday Wellness</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+}
+
+    .three-d-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  color: var(--text-color) !important; /* ← THIS is what you want */
+}
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 60%;
+      margin: 0.5rem auto 0 auto;
+      border-bottom: 3px solid rgb(40, 130, 180);
+    }
+
+    strong {
+      color: black !important;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .icon-button {
+      background-color: black;
+      color: black !important;
+  border: 1px solid white;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      margin: 0 10px;
+      cursor: pointer;
+        font-weight: bold;
+    }
+
+    .three-d-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #0d47a1;
+      text-shadow: 2px 2px 4px #aaa;
+    }
+
+    textarea {
+      width: 100%;
+        box-sizing: border-box; /* ← prevents overflows! */
+      min-height: 100px;
+      margin: auto;
+      display: block;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #5f2d5e;
+      border-radius: 5px;
+      background-color: rgb(250, 230, 250) !important;
+    }
+
+    label {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+
+    }
+
+    /* Print Styling */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        font-family: Georgia, serif;
+        padding: 0;
+        margin: 0;
+      }
+
+   .gradient-section-box2 {
+  background-color: rgb(250, 230, 250); /* Soft lavender purple */
+  padding: 2rem 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #ffffffcc;
+  border-bottom: 5px solid #ffffffcc;
+  box-sizing: border-box;
+}
+
+
+.container.wellness-wrapper {
+  box-sizing: border-box; /* ← add this */
+}
+
+/* everyday wellness container */
+.container.wellness-wrapper {
+  background: white;
+  border-top: 5px solid #ffffffcc;
+  border-bottom: 5px solid #ffffffcc;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 650px;
+  margin: 0 auto; /* ← centers it again */
+  border-radius: 1rem; /* optional for a softer look */
+}
+
+      textarea {
+        display: none !important;
+      }
+
+      .print-only {
+        white-space: pre-wrap;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 0;
+      }
+
+      .icon-button,
+      .button-row,
+      .backToApp,
+      nav,
+      footer {
+        display: none !important;
+      }
+
+      h1, h3 {
+        text-align: center;
+        color: black !important;
+      }
+
+      label {
+        text-align: left;
+        margin: 1rem 0 0.5rem;
+      }
+    }
+
+    .gradient-section-box2 {
+  color: black !important;
+}
+
+.gradient-section-box2 {
+  background-color: rgb(3, 3, 82);
+  padding: 2rem 0rem; /* 🪄 no side padding */
+  border-radius: 0; /* flatten the box feel */
+  box-shadow: none; /* remove the card-style shadow */
+  border-top: 5px solid #ffffffcc;
+  border-bottom: 5px solid #ffffffcc;
+  box-sizing: border-box;
+  width: 100vw; /* 🧠 full viewport width */
+  margin: 0; /* no centering */
+  color: white !important;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: white !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <h1 class="three-d-title">My Mental Health Plan</h1>
+
+  <div class="gradient-section-box2">
+
+    <form id="wellnessForm">
+      <div class="container wellness-wrapper">
+        <h3>🌼 Everyday Wellness</h3><br>
+
+        <label for="wellnessLook">
+          When I’m at my best, here’s how I feel and show up in the world:<br><br>
+          <textarea id="wellnessLook" placeholder="Describe what you feel like when you're in a good place..."></textarea>
+        </label><br><br>
+
+        <label for="dailyHabits">
+          Gentle routines that help me stay well:<br><br>
+          <textarea id="dailyHabits" placeholder="List the daily habits, rituals, or actions that support your wellness..."></textarea>
+        </label><br><br>
+
+        <h3>🌀 When I Feel Off Balance</h3><br>
+
+        <label for="triggerList">
+          Things that tend to make life feel harder for me:<br><br>
+          <textarea id="triggerList" placeholder="What situations or stressors throw you off?"></textarea>
+        </label><br><br>
+
+        <label for="afterTriggered">
+          What helps me find my footing again:<br><br>
+          <textarea id="afterTriggered" placeholder="What grounds you or helps you feel safe again?"></textarea>
+        </label><br><br>
+
+        <h3>⚠️ Early Warning Signs</h3><br>
+
+        <label for="warningSigns">
+          How I know something might be shifting:<br><br>
+          <textarea id="warningSigns" placeholder="What are the first signs you're starting to feel off?"></textarea>
+        </label><br><br>
+
+        <h3>🛟 Support Plan</h3>
+
+        <label for="actionPlan">
+          Ways I can care for myself when I notice those signs:<br><br>
+          <textarea id="actionPlan" placeholder="Write down your go-to coping tools and healing steps."></textarea>
+        </label><br><br>
+
+        <label for="anotherAction">
+          How others can support me if I need help:<br><br>
+          <textarea id="anotherAction" placeholder="Be honest about what kind of support helps from others."></textarea>
+        </label>
+
+        <div class="button-row">
+          <button type="button" class="icon-button" onclick="printPlan()">🖨️ Print</button>
+          <button type="button" class="icon-button" onclick="resetForm()">🗑️ Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <a href="wellness.html" class="backToApp">← Back</a>
+
+
+    <footer class="bottom-nav">
+    <a href="index.html" class="nav-icon">🏠<span>Home</span></a>
+    <a href="toolkit-hub.html" class="nav-icon">🧰<span>Toolkit</span></a>
+    <a href="wellness.html" class="nav-icon">💖<span>Wellness</span></a>
+    <a href="pet.html" class="nav-icon">🐾<span>Pet</span></a>
+    <a href="important-numbers.html" class="nav-icon">🆘<span>Help</span></a>
+  </footer>
+
+  <script>
+    const allThemes = [
+      'theme-blue', 'theme-green', 'theme-pink',
+      'theme-original', 'theme-pinklight', 'theme-purple',
+      'theme-greenmed', 'theme-pinkmed',
+      'theme-darkblue', 'theme-darkgreen', 'theme-darkrose'
+    ];
+
+    function setTheme(theme) {
+      const html = document.documentElement;
+      allThemes.forEach(t => html.classList.remove('theme-' + t));
+      html.classList.add('theme-' + theme);
+      localStorage.setItem("userTheme", theme);
+    }
+
+    function savePlan() {
+      const fields = ["wellnessLook", "dailyHabits", "triggerList", "afterTriggered", "warningSigns", "actionPlan", "anotherAction"];
+      const plan = {};
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) plan[id] = el.value;
+      });
+      localStorage.setItem("wellnessPlan", JSON.stringify(plan));
+      alert("Your plan was saved!");
+    }
+
+   function resetForm() {
+  if (confirm("Are you sure you want to clear the form?")) {
+    document.getElementById("wellnessForm").reset();
+    localStorage.removeItem("wellnessPlan");
+  }
+}
+
+    function preparePrint() {
+      const plan = JSON.parse(localStorage.getItem("wellnessPlan")) || {};
+      const fields = ["wellnessLook", "dailyHabits", "triggerList", "afterTriggered", "warningSigns", "actionPlan", "anotherAction"];
+      fields.forEach(id => {
+        const textarea = document.getElementById(id);
+        if (textarea) {
+          const value = plan[id] || textarea.value;
+          const p = document.createElement("p");
+          p.className = "print-only";
+          p.innerText = value;
+          textarea.parentNode.insertBefore(p, textarea.nextSibling);
+        }
+      });
+    }
+
+    function resetPrintView() {
+      const paragraphs = document.querySelectorAll(".print-only");
+      paragraphs.forEach(p => p.remove());
+    }
+
+    window.onload = function () {
+      const savedTheme = localStorage.getItem("userTheme");
+      if (savedTheme) setTheme(savedTheme);
+
+      const savedPlan = JSON.parse(localStorage.getItem("wellnessPlan"));
+      if (savedPlan) {
+        Object.keys(savedPlan).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = savedPlan[id];
+        });
+      }
+    };
+
+    function printPlan() {
+      preparePrint();
+      window.print();
+      setTimeout(resetPrintView, 1000);
+    }
+
+  </script>
+</body>
+</html>

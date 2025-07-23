@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js"></script>
+  <style>
+    .theme-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem; /* ← This adds mobile padding */
+  max-width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+}
+
+  </style>
+  <script>
+    const user = getCurrentUser();
+    if (!user) {
+      alert("Please log in to access this feature");
+      window.location.href = "login.html";
+    }
+    
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>🎨 Theme Shop</h1>
+  <div id="authControls" style="text-align:center; margin-top:1rem;"></div>
+
+  <div class="theme-gallery">
+  <!-- Yellow -->
+  <div class="theme-card"><h3>Bingo Yellow</h3><button onclick="setTheme('bingo')">Apply</button></div>
+<div class="theme-card"><h3>Bumblebee Yellow</h3><button onclick="setTheme('bumblebee')">Apply</button></div>
+<div class="theme-card"><h3>Stella Peach</h3><button onclick="setTheme('peach')">Apply</button></div>
+
+  <!-- Red -->
+  <div class="theme-card"><h3>Santafe Red</h3><button onclick="setTheme('arcade')">Apply</button></div>
+  
+    <!-- Blues -->
+  <div class="theme-card"><h3>Dolphin Blue</h3><button onclick="setTheme('dolphin')">Apply</button></div>
+  <div class="theme-card"><h3>Moonlight Blue</h3><button onclick="setTheme('moonlight')">Apply</button></div>
+  <div class="theme-card"><h3>Brady Blue</h3><button onclick="setTheme('brady')">Apply</button></div>
+
+  <!-- Greens -->
+  <div class="theme-card"><h3>JR Green</h3><button onclick="setTheme('green')">Apply</button></div>
+  <div class="theme-card"><h3>Monkey Green</h3><button onclick="setTheme('greenmed')">Apply</button></div>
+  <div class="theme-card"><h3>Golf Green</h3><button onclick="setTheme('darkgreen')">Apply</button></div>
+  
+  <!-- Pinks & Roses -->
+  <div class="theme-card"><h3>Strawberry Pink</h3><button onclick="setTheme('pinklight')">Apply</button></div>
+    <div class="theme-card"><h3>Shortcake Pink</h3><button onclick="setTheme('shortcake')">Apply</button></div>
+  <div class="theme-card"><h3>Prissy Pink</h3><button onclick="setTheme('pinkmed')">Apply</button></div>
+  <div class="theme-card"><h3>Date Rose</h3><button onclick="setTheme('darkrose')">Apply</button></div>
+  
+  <!-- Purples -->
+  <div class="theme-card"><h3>Starburst Purple</h3><button onclick="setTheme('purple')">Apply</button></div>
+
+  <!-- Brown -->
+    <div class="theme-card"><h3>Bubby-Bear Brown</h3><button onclick="setTheme('bubby-bear')">Apply</button></div>
+  
+  <!-- Original -->
+    <div class="theme-card"><h3>Original Theme</h3><button onclick="setTheme('original')">Reset</button></div>
+</div>
+
+    <a href="index.html" class="backToApp">← Back</a>
+<p onclick="location.href='about.html'" style="cursor: pointer; color: #b55e35; text-decoration: underline; font-weight: bold;">
+  Each theme is inspired by someone I love.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!-- 🔖 Badge Wall HTML Structure -->
+<div class="badge-wall">
+  <div class="badge" data-badge="login">
+    <img src="badges/login.png" alt="First Login Badge">
+    <span>First Login</span>
+  </div>
+
+  <div class="badge" data-badge="feelgood1">
+    <img src="badges/feelgood1.png" alt="First Feel-Good Idea">
+    <span>1 Feel-Good Idea</span>
+  </div>
+
+  <div class="badge" data-badge="feelgood5">
+    <img src="badges/feelgood5.png" alt="5 Feel-Good Ideas">
+    <span>5 Feel-Good Ideas</span>
+  </div>
+
+  <!-- Add more badges as needed -->
+</div>
+
+<!-- 🌈 CSS Styling -->
+<style>
+  .badge-wall {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .badge {
+    text-align: center;
+    width: 100px;
+  }
+  .badge img {
+    width: 80px;
+    height: 80px;
+    filter: grayscale(100%) opacity(50%);
+    transition: all 0.3s ease-in-out;
+  }
+  .badge.unlocked img {
+    filter: none;
+    opacity: 1;
+  }
+</style>
+
+<!-- 🧠 JavaScript Badge Logic -->
+<script>
+  const earnedBadges = JSON.parse(localStorage.getItem("earnedBadges")) || [];
+
+  document.querySelectorAll(".badge").forEach(badge => {
+    const id = badge.dataset.badge;
+    if (earnedBadges.includes(id)) {
+      badge.classList.add("unlocked");
+    }
+  });
+
+  // Example: to award a badge later in your app
+  function unlockBadge(badgeId) {
+    if (!earnedBadges.includes(badgeId)) {
+      earnedBadges.push(badgeId);
+      localStorage.setItem("earnedBadges", JSON.stringify(earnedBadges));
+      document.querySelector(`[data-badge='${badgeId}']`).classList.add("unlocked");
+    }
+  }
+</script>
