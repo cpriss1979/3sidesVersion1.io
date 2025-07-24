@@ -675,8 +675,11 @@ body {
 
     <div class="section" id="journalSection">
       <h3>Journal To Feed Your Pet</h3>
-      <div class="pet-button-row">
-        <button id="journalBtn" class="white-button" onclick="window.location.href='journal.html'">📝 Go Journal</button>
+      <!-- STACKED JOURNAL + FEED BUTTONS -->
+      <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+        <a href="journal.html">
+          <button id="journalBtn" class="white-button">📝 Go Journal</button>
+        </a>
         <button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
       </div>
       <p id="feedMsg" class="thankMsg">Thanks for journaling today, your mind thanks you! 🐾</p>
@@ -684,7 +687,8 @@ body {
 
     <div class="section">
       <h3>Did you drink water today?</h3>
-      <div class="pet-button-row">
+      <!-- SIDE-BY-SIDE WATER BUTTONS -->
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
         <button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -693,7 +697,8 @@ body {
 
     <div class="section">
       <h3>Did you do something kind for yourself today?</h3>
-      <div class="pet-button-row">
+      <!-- SIDE-BY-SIDE KINDNESS BUTTONS -->
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
         <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
         <button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -709,7 +714,7 @@ body {
     </div>
   </div>
 
-  <br>
+  <br />
   <div style="text-align: center;">
     <button class="button-black" onclick="resetPet()">🔄 Reset Pet</button>
   </div>
