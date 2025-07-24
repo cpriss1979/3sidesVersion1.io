@@ -337,12 +337,30 @@ ul#savedSupport {
   }
 }
 
+.support-intro {
+  text-align: center;
+  margin: 1rem auto 2rem;
+  padding: 0 2rem;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 400px) {
+  .support-intro {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+}
+
   </style>
 <body>
     <br><br>
     <h1 class="three-d-title">My Support</h1>
-    <p style="text-align: center; padding: 0rem 8rem; margin-bottom: 2rem;">
-These are the people I trust and can reach out to when I need help, comfort, or grounding.</p>
+<p class="support-intro">
+  These are the people I trust and can reach out to when I need help, comfort, or grounding.
+</p>
+
 
     <form id="supportForm">
       <input type="text" id="name" placeholder="Name" required />
