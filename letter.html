@@ -31,7 +31,6 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* ✅ prevents horizontal scroll */
-  width: 98%;
   box-sizing: border-box;
 }
 
@@ -42,8 +41,13 @@
   box-sizing: border-box;
   background-color: rgb(3, 3, 82); /* ✅ keep only the blue */
   color: white;
+    width: 100%;
   font-family: 'Open Sans', sans-serif;
   padding-bottom: 4rem; /* for footer space */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
    .dreamy-box {
