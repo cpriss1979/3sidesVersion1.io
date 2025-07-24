@@ -542,6 +542,25 @@ body {
   z-index: 0; /* make sure your other stuff sits above it */
 }
 
+.white-button {
+  background-color: #eae748;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.white-button:hover {
+  background-color:rgb(176, 176, 74) !important;
+  transform: scale(1.04);
+}
+
 @media (max-width: 600px) {
   .pet-action-buttons {
     display: flex;
@@ -620,49 +639,6 @@ body {
   margin: 1rem 0;
 }
 
-    .pet-button-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.white-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: none;
-  background-color: white;
-  font-weight: bold;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-    .pet-button-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap; /* ensures they stay side-by-side on wide screens, wrap on small */
-  margin-top: 1rem;
-}
-
-.white-button {
-  padding: 10px 20px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  background-color: #eae748;
-  color: black;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  cursor: pointer;
-  min-width: 120px; /* ensures consistent width */
-  text-align: center;
-}
-
-
  </style>
 </head>
 <body>
@@ -675,11 +651,8 @@ body {
 
     <div class="section" id="journalSection">
       <h3>Journal To Feed Your Pet</h3>
-      <!-- STACKED JOURNAL + FEED BUTTONS -->
-      <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-        <a href="journal.html">
-          <button id="journalBtn" class="white-button">📝 Go Journal</button>
-        </a>
+      <div class="button-row">
+        <button id="journalBtn" class="white-button" onclick="window.location.href='journal.html'">📝 Go Journal</button>
         <button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
       </div>
       <p id="feedMsg" class="thankMsg">Thanks for journaling today, your mind thanks you! 🐾</p>
@@ -687,8 +660,7 @@ body {
 
     <div class="section">
       <h3>Did you drink water today?</h3>
-      <!-- SIDE-BY-SIDE WATER BUTTONS -->
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <div class="button-row">
         <button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
         <button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -697,8 +669,7 @@ body {
 
     <div class="section">
       <h3>Did you do something kind for yourself today?</h3>
-      <!-- SIDE-BY-SIDE KINDNESS BUTTONS -->
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <div class="button-row">
         <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
         <button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -714,7 +685,7 @@ body {
     </div>
   </div>
 
-  <br />
+  <br>
   <div style="text-align: center;">
     <button class="button-black" onclick="resetPet()">🔄 Reset Pet</button>
   </div>
