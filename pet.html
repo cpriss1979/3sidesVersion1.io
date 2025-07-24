@@ -603,60 +603,102 @@ body {
   }
 }
 
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.button-purple {
+  padding: 10px 20px;
+  background-color: rgb(221, 151, 221);
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.button-purple {
+  flex: 1 1 auto;
+  max-width: 120px; /* or whatever feels right */
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
 
  </style>
 </head>
 <body>
   <div class="sparkle-container"></div>
-<div class="pet-container">
 
+  <div class="pet-container">
     <h1>🌟 Care for Your Pet Friend 🌟</h1>
     <img id="petImage" src="pet-baby.png" alt="Your Pet" />
     <p id="petMessage">Hi, I'm your wellness buddy! Let's grow together 🌱</p>
 
     <div class="section" id="journalSection">
       <h3>Journal To Feed Your Pet</h3>
-      <a href="journal.html"><button id="journalBtn" class="white-button">📝 Go Journal</button></a>
-<button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
+      <div class="button-row">
+        <a href="journal.html"><button id="journalBtn" class="white-button">📝 Go Journal</button></a>
+        <button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
+      </div>
       <p id="feedMsg" class="thankMsg">Thanks for journaling today, your mind thanks you! 🐾</p>
     </div>
 
     <div class="section">
-     <h3>Did you drink water today?</h3>
-<button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
-<button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
+      <h3>Did you drink water today?</h3>
+      <div class="button-row">
+        <button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
+        <button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
+      </div>
+      <p id="waterMsg" class="thankMsg">Thanks for drinking water today, your body thanks you!</p>
+    </div>
 
-<p id="waterMsg" class="thankMsg">Thanks for drinking water today, your body thanks you!</p>
-</div>
     <div class="section">
-  <h3>Did you do something kind for yourself today?</h3>
-  <div class="button-row">
-    <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
-<button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
-  </div>
-  <p id="bathMsg" class="thankMsg">Thanks for your kindness today!</p>
-</div>
+      <h3>Did you do something kind for yourself today?</h3>
+      <div class="button-row">
+        <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
+        <button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
+      </div>
+      <p id="bathMsg" class="thankMsg">Thanks for your kindness today!</p>
+    </div>
 
-      <div class="torn-paper-divider"></div>
+    <div class="torn-paper-divider"></div>
 
     <div class="section" id="badgeWall">
       <h3>🏅 My Badges</h3>
       <div id="badgeContainer"></div>
-            <div class="torn-paper-divider"></div>
-
+      <div class="torn-paper-divider"></div>
     </div>
   </div>
-<br></div>
-<button class="button-black" onclick="resetPet()">🔄 Reset Pet</button>
 
-   <footer class="bottom-nav">
+  <br>
+  <div style="text-align: center;">
+    <button class="button-black" onclick="resetPet()">🔄 Reset Pet</button>
+  </div>
+
+  <footer class="bottom-nav">
     <a href="index.html" class="nav-icon">🏠<span>Home</span></a>
     <a href="toolkit-hub.html" class="nav-icon">🧰<span>Toolkit</span></a>
     <a href="wellness.html" class="nav-icon">💖<span>Wellness</span></a>
     <a href="pet.html" class="nav-icon">🐾<span>Pet</span></a>
     <a href="important-numbers.html" class="nav-icon">🆘<span>Help</span></a>
   </footer>
-  
+</body>
+
   <script>
     const today = new Date().toISOString().split('T')[0];
     let petLevel = parseInt(localStorage.getItem("petLevel")) || 0;
