@@ -639,6 +639,22 @@ body {
   margin: 1rem 0;
 }
 
+.side-by-side-buttons {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.stack-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+  margin-top: 1rem;
+}
+
  </style>
 </head>
 <body>
@@ -646,13 +662,13 @@ body {
 
   <div class="pet-container">
     <h1>🌟 Care for Your Pet Friend 🌟</h1>
-    <img id="petImage" src="pet-baby.png" alt="Your Pet" />
+    <img id="petImage" src="pet-baby.png" alt="Your Pet" style="max-width: 250px; width: 80%; display: block; margin: 0 auto;" />
     <p id="petMessage">Hi, I'm your wellness buddy! Let's grow together 🌱</p>
 
     <div class="section" id="journalSection">
       <h3>Journal To Feed Your Pet</h3>
-      <div class="button-row">
-        <button id="journalBtn" class="white-button" onclick="window.location.href='journal.html'">📝 Go Journal</button>
+      <div class="stack-buttons">
+        <a href="journal.html"><button id="journalBtn" class="white-button">📝 Go Journal</button></a>
         <button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
       </div>
       <p id="feedMsg" class="thankMsg">Thanks for journaling today, your mind thanks you! 🐾</p>
@@ -660,7 +676,7 @@ body {
 
     <div class="section">
       <h3>Did you drink water today?</h3>
-      <div class="button-row">
+      <div class="side-by-side-buttons">
         <button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
         <button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -669,7 +685,7 @@ body {
 
     <div class="section">
       <h3>Did you do something kind for yourself today?</h3>
-      <div class="button-row">
+      <div class="side-by-side-buttons">
         <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
         <button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -685,7 +701,7 @@ body {
     </div>
   </div>
 
-  <br>
+  <br />
   <div style="text-align: center;">
     <button class="button-black" onclick="resetPet()">🔄 Reset Pet</button>
   </div>
