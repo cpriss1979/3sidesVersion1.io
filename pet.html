@@ -639,6 +639,25 @@ body {
   margin: 1rem 0;
 }
 
+    .pet-button-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.white-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
  </style>
 </head>
 <body>
@@ -651,7 +670,7 @@ body {
 
     <div class="section" id="journalSection">
       <h3>Journal To Feed Your Pet</h3>
-      <div class="button-row">
+      <div class="pet-button-row">
         <button id="journalBtn" class="white-button" onclick="window.location.href='journal.html'">📝 Go Journal</button>
         <button id="feedPetBtn" class="white-button" onclick="feedPet()" disabled>🍽️ Feed Pet</button>
       </div>
@@ -660,7 +679,7 @@ body {
 
     <div class="section">
       <h3>Did you drink water today?</h3>
-      <div class="button-row">
+      <div class="pet-button-row">
         <button id="waterYesBtn" class="white-button" onclick="waterPet()">✅ Yes</button>
         <button id="waterNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
@@ -669,7 +688,7 @@ body {
 
     <div class="section">
       <h3>Did you do something kind for yourself today?</h3>
-      <div class="button-row">
+      <div class="pet-button-row">
         <button id="bathYesBtn" class="white-button" onclick="bathePet()">✅ Yes</button>
         <button id="bathNoBtn" class="white-button" onclick="alert('You deserve kindness 💖')">❌ No</button>
       </div>
